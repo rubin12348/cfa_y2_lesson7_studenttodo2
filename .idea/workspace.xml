@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb2df7e8-9234-48f5-9623-6cbe7dc69f28" name="Default Changelist" comment="" />
+    <list default="true" id="eb2df7e8-9234-48f5-9623-6cbe7dc69f28" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +53,9 @@
       <workItem from="1617729709500" duration="9720000" />
       <workItem from="1617768589886" duration="3586000" />
       <workItem from="1617819694384" duration="2205000" />
-      <workItem from="1617825310666" duration="1587000" />
+      <workItem from="1617825310666" duration="1782000" />
+      <workItem from="1617954196891" duration="3769000" />
+      <workItem from="1617995001039" duration="3558000" />
     </task>
     <servers />
   </component>

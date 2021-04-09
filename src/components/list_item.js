@@ -13,25 +13,8 @@ import React from "react";
  * @returns {JSX.Element}
  * @constructor
  */
-export default function ListItem({id,checked,title,content,onCheckedChange,onDelete}) {
-    return (
-        <div key={id} data-id={id} className="list-item">
-            <div className="list-item-check">
-                <label>
-                    <input onChange={onCheckedChange}
-                           defaultChecked={ checked?"checked":""}
-                           type="checkbox"/>
-                </label>
-            </div>
-            <div className="list-item-content">
-                <label className="content-title">{title}</label>
-                <label className="content-body">{content}</label>
-            </div>
-            <div className="list-item-action">
-                <button className="image-button"
-                        onClick={onDelete}>
-                    <FaTrash/>
-                </button>
-            </div>
-        </div>);
+export default function ListItem(props) {
+    return (<>
+        {/** JSX here **/}
+    </>);
 }
