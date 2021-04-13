@@ -37,23 +37,38 @@ function App() {
         // update state, set the state to a new list that has all old object but also the new object
         // you can use a function to update state instead of a value
         // old=>[newItem,...old];
+
+
+        {items.map(
+            item => (
+                <div key={item.id} className="list-item">
+                    <input onChange={() => toggle_item(item.id)}
+                        defaultChecked={item.checked ? "checked" : ""}
+                        type="checkbox"/>
+                    <label className="list-item-content">
+                        {item.note}
+                    </label>
+                </div>
+        ),
+        )} 
     const handle_add_item = () => {
-        // your code here
-        const newId = 0;// calculate id  instead of 0
-        const newItem = {title,/** complete other properties */};
+        const newId = Math.random();
+        const newItem = {id,note:"Content 1 is here this is a simple example",checked:true};
+        setItems(old=>[newItem,...old]);
+
+
         setTitle("");
         // do the sime also for the content hook as is done for the title one
         //setItems(/** you can use a function to update the state */);
     }
 
-    // todo 4 complete the delete method
-    // you can put initially a window.alert("
+    
     const delete_item = (id) => {
-        // remove the line window.alert ...
-        window.alert(`deleting item with id:${id}`);
-        // you can use filter function to update state
-        // just return the elements that have an id diffrent from the delete_item id argument
-        // use a lambda function to update the state
+        
+        setItems(old=>old.filter(
+            item=>item.id!=id
+
+        ));
     }
 
     // todo 5 complete the toggle item function
@@ -63,11 +78,14 @@ function App() {
 
     const toggle_item = (id) => {
         setItems((old) => {
-            // update the checked property of the item with id equal to the argument of toggle_item function
-            // use foreach function of the list to iterate to the list items
-            // update toggle property of the item with id toggle_item function takes as argument
-
-            return old;
+            const newList = [...old];
+            for(let i=0;i<newList.length;i++){
+                if(newList[i].id===id){
+                    newList[i] = {...newList[i],checked: !newList[i].checked}
+                    break;
+                }
+            }
+            return newList;
         });
     }
 
@@ -87,6 +105,7 @@ function App() {
                         style={{"background-color": "red"}}>
                         Clear All
                     </button>
+                
                 </div>
             </section>
             <section className="form">
@@ -95,8 +114,8 @@ function App() {
                         <label className="form-inline-label">Title</label>
                         {/** check example below for todo 1 */}
                         <input onChange={e => setTitle(e.target.value)}
-                               value={title}
-                               className="form-inline-control"/>
+                            value={title}
+                            className="form-inline-control"/>
                     </div>
                 </div>
                 <div className="form-group">
@@ -112,9 +131,10 @@ function App() {
                 </div>
                 <div className="form-inline">
                     <div className="form-inline-label"></div>
-                    <button /** bind handel_add_item_function here using onClick={...} **/
-                        className="btn form-inline-control"> Add
+                    <button onClick={handle_add_item}>
+                        Add
                     </button>
+
                 </div>
             </section>
             <main className="list">
@@ -129,8 +149,8 @@ function App() {
                                 <div className="list-item-check">
                                     <label>
                                         <input onChange={()=>toggle_item(item.id)}
-                                               defaultChecked={item.checked ? "checked" : ""}
-                                               type="checkbox"/>
+                                            defaultChecked={item.checked ? "checked" : ""}
+                                            type="checkbox"/>
                                     </label>
                                 </div>
                                 <div className="list-item-content">
@@ -139,10 +159,7 @@ function App() {
                                 </div>
                                 <div className="list-item-action">
                                     <button className="image-button"
-                                            /** Todo 3 bind the delete_item function to the delete button of the specific item
-                                                  you can follow same approach as the toggle_item function
-                                                if you do it right a window will be shown on the screen ***/
-                                           /* onClick={ your listener here }*/>
+                                            onClick={(e)=>delete_item(item.id)}>
                                         <FaTrash/>
                                     </button>
                                 </div>
